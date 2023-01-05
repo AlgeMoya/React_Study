@@ -1,34 +1,57 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import React from "react";
+import "./App.scss";
+import Button from "./components/Button";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="buttons">
+        <Button size="large" onClick={() => console.log("클릭됐다!")}>
+          BUTTON
+        </Button>
+        <Button>BUTTON</Button>
+        <Button size="small">BUTTON</Button>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      <div className="buttons">
+        <Button size="large" color="gray">
+          BUTTON
+        </Button>
+        <Button color="gray">BUTTON</Button>
+        <Button size="small" color="gray">
+          BUTTON
+        </Button>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <div className="buttons">
+        <Button size="large" color="pink">
+          BUTTON
+        </Button>
+        <Button color="pink">BUTTON</Button>
+        <Button size="small" color="pink">
+          BUTTON
+        </Button>
+      </div>
+      <div className="buttons">
+        <Button size="large" color="blue" outline>
+          BUTTON
+        </Button>
+        <Button color="gray">BUTTON</Button>
+        <Button size="small" color="pink" outline>
+          BUTTON
+        </Button>
+      </div>
+      <div className="buttons">
+        <Button size="large" fullWidth>
+          BUTTON
+        </Button>
+        <Button size="large" fullWidth color="gray">
+          BUTTON
+        </Button>
+        <Button size="small" fullWidth color="pink">
+          BUTTON
+        </Button>
+      </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
