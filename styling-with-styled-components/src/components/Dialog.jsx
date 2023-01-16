@@ -120,6 +120,7 @@ function Dialog({
   }, [localVisible, visible]);
 
   if (!animate && !localVisible) return null;
+
   return (
     <DarkBackground disappear={!visible}>
       <DialogBlock disappear={!visible}>
