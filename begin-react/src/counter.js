@@ -1,3 +1,21 @@
+import React, {Component} from "react";
+
+class Counter extends Component {
+  render() {
+    return (
+      <div>
+      <h1>0</h1>
+      <button >+1</button>
+      <button >-1</button>
+    </div> 
+    )
+  }
+}
+
+export default Counter;
+
+
+/* 클래스형 컴포넌트를 사용하지 않은 코드
 import React, { useState, useReducer } from "react";
 
 function reducer(state, action) {
@@ -22,15 +40,14 @@ function Counter() {
     dispatch({ type: "DECREMENT" });
   };
 
-  /*
-  let onIncrease = () => {
-    // 화살표 좌측 ()에는 파라미터, 우측에는 코드 블록 {}
-    setNumber((prevNumber) => prevNumber + 1);
-  };
-  let onDecrease = () => {
-    setNumber((prevNumber) => prevNumber - 1);
-  };
-*/
+  
+  // let onIncrease = () => {
+  //   // 화살표 좌측 ()에는 파라미터, 우측에는 코드 블록 {}
+  //   setNumber((prevNumber) => prevNumber + 1);
+  // };
+  // let onDecrease = () => {
+  //   setNumber((prevNumber) => prevNumber - 1);
+  // };
 
   return (
     <div>
@@ -42,3 +59,4 @@ function Counter() {
 }
 
 export default Counter;
+*/
