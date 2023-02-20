@@ -759,6 +759,18 @@ update-browserslist-db@^1.0.10:
     escalade "^3.1.1"
     picocolors "^1.0.0"
 
+use-force-update@^1.0.5:
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/use-force-update/-/use-force-update-1.0.11.tgz#9483e9cf3e3cfba0f486cce141b66426bcb27619"
+  integrity sha512-h4SICYgTJHon8w9dFIqdqR1Vrzdgl4YaRfRwhmAh01kBGljzTICanyfaFU8C4etuEfRdYpE+04XX2ZrEhOWKXQ==
+
+use-react-router@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/use-react-router/-/use-react-router-1.0.7.tgz#04216066d87e45040309f24d2fd5e9f28308b3e2"
+  integrity sha512-gdqIHEO28E+qDJQ+tOMGQPthPib7mhLI/4MY7wtxJuaVUkosbP+FAYcHmmE7/FjYoMsuzL/bvY/25st7QHodpw==
+  dependencies:
+    use-force-update "^1.0.5"
+
 vite@^4.1.0:
   version "4.1.1"
   resolved "https://registry.npmjs.org/vite/-/vite-4.1.1.tgz"

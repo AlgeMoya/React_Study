@@ -22,9 +22,18 @@ const Profile = () => {
      * const {username} = match.params; 
      * const profile = profileData[username];
      */
-    
+
+    // V5 -> V6 useParams로 변경
     const params: any = useParams();
+    console.log(params.username); // 선택 유저 콘솔 출력
     const profile = profileData[params.username];
+
+    // 이 코드도 쓸 수 있음
+    /*
+    const {username} = useParams();
+    console.log(username); // 선택 유저 콘솔 출력
+    const profile = profileData[username];
+    */
     
     if (!profile) {
         return <div>존재하지 않는 유저입니다.</div>
