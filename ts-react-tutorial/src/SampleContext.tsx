@@ -77,19 +77,21 @@ export function SampleProvider({children} : {children: React.ReactNode}) {
         isGood: true
     });
 
+    // console.log(state)
+
     return (
         <SampleStateContext.Provider value={state}>
-            <SampleDispatchContext.Provider value={dispatch}>
-                {children}
-            </SampleDispatchContext.Provider>
+          <SampleDispatchContext.Provider value={dispatch}>
+            {children}
+          </SampleDispatchContext.Provider>
         </SampleStateContext.Provider>
-    );
-}
-
+      );
+    }
 // state와 dispatch를 쉽게 사용하기 위한 커스텀 Hooks
 // null 체킹을 해주는 것이 매우 중요함!
 export function useSampleState() {
     const state = useContext(SampleStateContext);
+    // console.log(state);
     if (!state) {
         // Context가 지니고 있는 값이 유효하지 않으면 에러를 발생시킨다.
         // 이렇게 함으로서 이 Hooks를 사용할 때 각 Hooks 함수들이 반환하는 값이 항상 유효함을 보장할 수 있다.
@@ -107,45 +109,3 @@ export function useSampleDispatch() {
     }
     return dispatch;
 }
-
-
-// useReducer에 넣는 첫번째 파라미터는 reducer 함수고 두번째 파라미터는 초기 상태이다.
-function ReducerSample() {
-    // state: 사용할 상태, dispatch: 액션을 발생시키는 함수
-    const [state, dispatch] = useReducer(reducer, {
-        count: 0,
-        text: 'hello',
-        color: 'red',
-        isGood: true
-    });
-
-    const setCount = () => dispatch({type: 'SET_COUNT', count: 5}); // count를 넣지 않으면 에러 발생
-    const setText = () => dispatch({type: 'SET_TEXT', text: 'bye'}); // text를 넣지 않으면 에러 발생
-    const setColor = () => dispatch({type: 'SET_COLOR', color: 'orange'}); // orange를 넣지 않으면 에러 발생
-    const toggleGood = () => dispatch({type: 'TOGGLE_GOOD'}); 
-
-    return (
-        <div>
-            <p>
-                <code>count: </code> {state.count}
-            </p>
-            <p>
-                <code>text: </code> {state.text}
-            </p>
-            <p>
-                <code>color: </code> {state.color}
-            </p>
-            <p>
-                <code>isGood: </code> {state.isGood ? 'true' : 'false'}
-            </p>
-            <div>
-                <button onClick={setCount}>SET_COUNT</button>
-                <button onClick={setText}>SET_TEXT</button>
-                <button onClick={setColor}>SET_COLOR</button>
-                <button onClick={toggleGood}>TOGGLE_GOOD</button>
-            </div>
-        </div>
-    )
-}
-
-export default ReducerSample;
